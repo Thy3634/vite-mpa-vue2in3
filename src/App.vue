@@ -13,8 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/sub/">Sub page with vue2
-        </RouterLink>
+        <a href="/sub/">Sub page with vue2</a>
       </nav>
     </div>
   </header>
