@@ -23,8 +23,12 @@ export default defineConfig({
       { find: '@', replacement: resolve('src') },
       { find: 'sub', replacement: resolve('src/sub') },
       { find: 'vue', replacement: 'vue' },
+      { find: 'element-ui', replacement: resolve('packages/element-ui') }
     ]
   },
+  optimizeDeps: {
+    include: ['packages/element-ui']
+  }
 })
 
 function resolve(...paths: string[]) {
