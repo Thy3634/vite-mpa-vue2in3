@@ -10,10 +10,10 @@ import * as compiler from 'vue2/compiler-sfc'
 export default defineConfig({
   plugins: [
     vue({
-      exclude: ['sub/**'],
+      exclude: ['src/sub/**'],
     }),
     vue2({
-      include: ['sub/**/*.vue'],
+      include: ['src/sub/**/*.vue'],
       // @ts-ignore
       compiler,
     }),
@@ -21,18 +21,10 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: '@', replacement: resolve('src') },
-      { find: 'sub', replacement: resolve('sub') },
+      { find: 'sub', replacement: resolve('src/sub') },
       { find: 'vue', replacement: 'vue' },
     ]
   },
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve("index.html"),
-        sub: resolve("sub/index.html"),
-      }
-    }
-  }
 })
 
 function resolve(...paths: string[]) {

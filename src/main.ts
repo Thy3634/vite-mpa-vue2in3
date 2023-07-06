@@ -6,9 +6,14 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-const app = createApp(App)
 
-app.use(createPinia())
-app.use(router)
+if (location.pathname.includes('/sub')) {
+    import('./sub/main')
+} else {
+    const app = createApp(App)
 
-app.mount('#app')
+    app.use(createPinia())
+    app.use(router)
+
+    app.mount('#app')
+}

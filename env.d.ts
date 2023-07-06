@@ -1,3 +1,13 @@
 /// <reference types="vite/client" />
 
-declare module './vite-plugin-vue2';
+declare module 'sub/*.vue' {
+    import { Component } from 'vue2'
+    const component: Component
+    export default component
+}
+
+declare module 'sub/**/*.vue' {
+    import { Component } from 'vue2'
+    const component: Component
+    export default component
+}
