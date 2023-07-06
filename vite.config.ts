@@ -5,6 +5,7 @@ import path from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import vue2 from '@vitejs/plugin-vue2'
 import * as compiler from 'vue2/compiler-sfc'
+import commonjs from '@rollup/plugin-commonjs'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,6 +18,9 @@ export default defineConfig({
       // @ts-ignore
       compiler,
     }),
+    commonjs({
+      include: ['packages/**']
+    })
   ],
   resolve: {
     alias: [
@@ -27,8 +31,8 @@ export default defineConfig({
     ]
   },
   optimizeDeps: {
-    include: ['packages/element-ui']
-  }
+    include: ['element-ui']
+  },
 })
 
 function resolve(...paths: string[]) {

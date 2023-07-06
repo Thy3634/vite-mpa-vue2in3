@@ -11,3 +11,7 @@ declare module 'sub/**/*.vue' {
     const component: Component
     export default component
 }
+
+declare module 'element-ui' {
+    export * from 'packages/element-ui'
+}
